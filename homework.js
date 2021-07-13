@@ -55,9 +55,22 @@ function celsiusToFahrenheit(celsius) {
 // Absolute zero (0 K) is equivalent to −273.15 C.
 // 1 degree Kelvin equals 1 degree Celsius.
 
+function fahrenheitToKelvin(fahrenheit) {
+    if (fahrenheitToCelsius(fahrenheit) === 0)
+    return 273.15
+    else 
+    return fahrenheitToCelsius(fahrenheit) + 273.15
+}
 // 9. Create a function called lesser that takes two numbers as
 // arguments and returns the lesser of them. This function should
 // use an if/else statement.
+
+function lesser(num1, num2) {
+    if (num1 > num2) 
+    return num2
+    else (num2 > num1)
+    return num1
+}
 
 // 10. Create a function called multigreeting that takes a name
 // and a language code and returns a version of "Hello, <name>!"
@@ -71,6 +84,16 @@ function celsiusToFahrenheit(celsius) {
 //
 // If any other language code is used, return nothing.
 
+function multigreeting(name, language) {
+    if (language === "en")
+    return "Hello, " + name + "!"
+    else if (language === "es")
+    return "¡Hola, " + name + "!"
+    else if (language === "fr")
+    return "Bonjour, " + name + "!"
+    else if (language === "eo")
+    return "Saluton, " + name + "!"
+}
 // 11. The greatest common divisor (https://en.wikipedia.org/wiki/Greatest_common_divisor)
 // is the largest integer that, given two other integers, can be divided into them. For
 // example, the greatest common divisor of 24 and 81 is 3. The greatest common divisor of
@@ -97,3 +120,30 @@ function celsiusToFahrenheit(celsius) {
 
 // Write a function called gcd that takes two arguments and returns the greatest common
 // divisor using the instructions above.
+
+/* I know the answer below is correct but I don't fully understand how it works. I definitely need to do more work with while loops.
+function gcd(a, b) {
+    let d = 0;
+
+    while (isEven(a) && isEven(b)) {
+        a = a / 2;
+        b = b / 2;
+        d++;
+    }
+    while (a !== b) {
+        if (isEven(a)) {
+            a = a / 2;
+        } else if (isEven(b)) {
+            b = b / 2;
+        } else if (a > b) {
+            a = (a - b) / 2;
+        } else {
+           b = (b - a) / 2;
+        }
+    }
+    let g = a
+
+    return g * 2 ** d;
+}
+*/
+    
